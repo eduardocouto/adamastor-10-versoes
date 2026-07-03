@@ -1,0 +1,222 @@
+[
+ {
+  "slug": "s01-mare",
+  "name": "V01 — Maré",
+  "clips": [
+   {
+    "asset": "1227a7f1-ecee-4f41-9d44-b7a5ee17de23",
+    "off": 0,
+    "dur": 240.296
+   }
+  ]
+ },
+ {
+  "slug": "s02-madeira",
+  "name": "V02 — Madeira",
+  "clips": [
+   {
+    "asset": "c1c9c14f-1293-4fb9-bc84-688e35b0b65c",
+    "off": 0.2,
+    "dur": 239.8
+   }
+  ]
+ },
+ {
+  "slug": "s03-quinteto",
+  "name": "V03 — Quinteto",
+  "clips": [
+   {
+    "asset": "cf1c509f-7d0f-4dbb-a772-946e3fc73dfe",
+    "off": 0.268,
+    "dur": 239.732
+   }
+  ]
+ },
+ {
+  "slug": "s04-ostinato",
+  "name": "V04 — Ostinato",
+  "clips": [
+   {
+    "asset": "79381632-ae9a-47f7-945d-0438cb5593b9",
+    "off": 0.17,
+    "dur": 239.83
+   }
+  ]
+ },
+ {
+  "slug": "s05-ferro",
+  "name": "V05 — Ferro",
+  "clips": [
+   {
+    "asset": "15fe5ac0-6554-467e-b832-4f0f83f07af6",
+    "off": 0.178,
+    "dur": 239.822
+   }
+  ]
+ },
+ {
+  "slug": "s06-vidro",
+  "name": "V06 — Vidro",
+  "clips": [
+   {
+    "asset": "d3258c4d-0ccd-44e1-a8c9-4fc2fb1ed32c",
+    "off": 0.023,
+    "dur": 239.977
+   }
+  ]
+ },
+ {
+  "slug": "s07-noturno",
+  "name": "V07 — Noturno",
+  "clips": [
+   {
+    "asset": "0a22b3c3-ee77-46fc-83ec-2243f0597c97",
+    "off": 0,
+    "dur": 240.099
+   }
+  ]
+ },
+ {
+  "slug": "s08-elegia",
+  "name": "V08 — Elegia",
+  "clips": [
+   {
+    "asset": "56661c3c-6936-46ae-8d3e-bf3b8f7fcbc9",
+    "off": 0.101,
+    "dur": 239.899
+   }
+  ]
+ },
+ {
+  "slug": "s09-respiracao",
+  "name": "V09 — Respiração",
+  "clips": [
+   {
+    "asset": "dacc154f-eff0-4366-9b10-f1a9e0b2e704",
+    "off": 0,
+    "dur": 240.011
+   }
+  ]
+ },
+ {
+  "slug": "s10-osso",
+  "name": "V10 — Osso",
+  "clips": [
+   {
+    "asset": "0b94dd4d-182a-404b-bf6f-3d8fa353d63a",
+    "off": 0.111,
+    "dur": 239.889
+   }
+  ]
+ },
+ {
+  "slug": "s11-sinal",
+  "name": "V11 — Sinal",
+  "clips": [
+   {
+    "asset": "63730f3a-9193-4dab-9016-fa5c09dbc3ba",
+    "off": 0,
+    "dur": 240.023
+   }
+  ]
+ },
+ {
+  "slug": "s12-relogios",
+  "name": "V12 — Relógios",
+  "clips": [
+   {
+    "asset": "00c25f40-ba88-40d6-8b11-a4b921c9272c",
+    "off": 0.152,
+    "dur": 239.848
+   }
+  ]
+ },
+ {
+  "slug": "s13-analogo",
+  "name": "V13 — Análogo",
+  "clips": [
+   {
+    "asset": "50836cfd-bd25-4d7d-9aa3-4794535947d9",
+    "off": 0.115,
+    "dur": 239.885
+   }
+  ]
+ },
+ {
+  "slug": "s14-decay",
+  "name": "V14 — Decay",
+  "clips": [
+   {
+    "asset": "ba7c27d3-7497-4ab4-bc18-f1417d468c94",
+    "off": 0,
+    "dur": 240.071
+   }
+  ]
+ },
+ {
+  "slug": "s15-camara-escura",
+  "name": "V15 — Câmara Escura",
+  "clips": [
+   {
+    "asset": "5a775794-3f07-4bf2-b904-cfdfd3210ccb",
+    "off": 0.079,
+    "dur": 239.921
+   }
+  ]
+ },
+ {
+  "slug": "s16-luz-de-manha",
+  "name": "V16 — Luz de Manhã",
+  "clips": [
+   {
+    "asset": "e15a9767-22bd-4f36-aaf7-f06b05f0a382",
+    "off": 0,
+    "dur": 240.21
+   }
+  ]
+ },
+ {
+  "slug": "s17-po",
+  "name": "V17 — Pó",
+  "clips": [
+   {
+    "asset": "ad216b78-54ad-4db7-830e-cfda41c4b5c2",
+    "off": 0.029,
+    "dur": 239.971
+   }
+  ]
+ },
+ {
+  "slug": "s18-fita",
+  "name": "V18 — Fita",
+  "clips": [
+   {
+    "asset": "27e9c2a9-c801-4720-a987-2ae9fc796fe3",
+    "off": 0,
+    "dur": 240.28
+   }
+  ]
+ },
+ {
+  "slug": "s19-sonho",
+  "name": "V19 — Sonho",
+  "clips": [
+   {
+    "asset": "68bd7909-d42e-4014-9902-aff484a9797f",
+    "off": 0,
+    "dur": 240.019
+   }
+  ]
+ },
+ {
+  "slug": "s20-silencio",
+  "name": "V20 — Silêncio",
+  "clips": [
+   {
+    "asset": "6749ee38-c02e-4886-9256-5a46eb811682",
+    "off": 0.274,
+    "dur": 239.726
+   }
+  ]
+ }
+]
