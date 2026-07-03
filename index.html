@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Adamastor — 10 Versões · Entre a Forma e o Silêncio</title>
+<style>
+  :root{
+    --bg:#0d0e11; --panel:#14161b; --panel2:#191c22; --ink:#e8e6e1; --dim:#9a978f; --faint:#6a675f;
+    --line:#262a32; --accent:#c9a35f;
+    --c1:#b8a24a; --c2:#c2497a; --c3:#8b7bd8; --c4:#3f9e63; --c5:#d07030; --c6:#c9b23c;
+    --c7:#4fa3a5; --c8:#c24949; --c9:#7b6fd8; --c10:#8a8f98;
+  }
+  *{box-sizing:border-box; margin:0; padding:0}
+  body{background:var(--bg); color:var(--ink); font:16px/1.65 "Georgia","Times New Roman",serif; padding-bottom:6rem}
+  .wrap{max-width:860px; margin:0 auto; padding:0 1.25rem}
+  header{padding:5rem 0 3rem; border-bottom:1px solid var(--line); text-align:center}
+  header .k{font-family:ui-monospace,Menlo,monospace; font-size:.72rem; letter-spacing:.35em; text-transform:uppercase; color:var(--accent)}
+  h1{font-size:clamp(2rem,6vw,3.2rem); font-weight:400; letter-spacing:.02em; margin:.6rem 0 .4rem}
+  header p.sub{color:var(--dim); font-style:italic; max-width:34em; margin:0 auto}
+  section{padding:2.8rem 0; border-bottom:1px solid var(--line)}
+  h2{font-size:1.05rem; font-family:ui-monospace,Menlo,monospace; letter-spacing:.25em; text-transform:uppercase; color:var(--accent); font-weight:400; margin-bottom:1.2rem}
+  p{margin-bottom:1rem; color:var(--ink)}
+  p.mut, li.mut{color:var(--dim)}
+  ul{margin:0 0 1rem 1.2rem}
+  li{margin-bottom:.5rem; color:var(--dim)}
+  li strong{color:var(--ink); font-weight:600}
+  .grammar{display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:.8rem; margin:1.2rem 0}
+  .gcell{background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:.9rem 1rem}
+  .gcell b{display:block; font-size:.8rem; font-family:ui-monospace,Menlo,monospace; letter-spacing:.12em; text-transform:uppercase; color:var(--accent); margin-bottom:.3rem}
+  .gcell span{font-size:.88rem; color:var(--dim)}
+  .story{display:flex; flex-wrap:wrap; gap:.5rem; margin:1rem 0}
+  .story .st{flex:1 1 160px; background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:.7rem .9rem; font-size:.85rem; color:var(--dim)}
+  .story .st b{display:block; color:var(--ink); font-weight:600; margin-bottom:.15rem}
+  /* versão */
+  .v{margin:2.6rem 0; background:var(--panel); border:1px solid var(--line); border-radius:12px; overflow:hidden}
+  .v .head{padding:1.4rem 1.5rem 1rem; border-left:4px solid var(--vc,#888)}
+  .v .num{font-family:ui-monospace,Menlo,monospace; font-size:.7rem; letter-spacing:.3em; color:var(--faint)}
+  .v h3{font-size:1.5rem; font-weight:500; margin:.15rem 0 .3rem}
+  .v .meta{font-size:.8rem; font-family:ui-monospace,Menlo,monospace; color:var(--dim)}
+  .v .meta em{color:var(--vc,#888); font-style:normal}
+  .v .desc{padding:0 1.5rem 1rem; color:var(--dim); font-size:.95rem}
+  .v audio{display:block; width:calc(100% - 3rem); margin:0 1.5rem 1.2rem}
+  details{margin:0 1.5rem 1.4rem; border:1px solid var(--line); border-radius:8px; background:var(--panel2)}
+  summary{cursor:pointer; padding:.6rem .9rem; font-size:.8rem; font-family:ui-monospace,Menlo,monospace; letter-spacing:.12em; text-transform:uppercase; color:var(--dim)}
+  summary:hover{color:var(--ink)}
+  .p{padding:.8rem .9rem; border-top:1px solid var(--line)}
+  .p b{display:block; font-size:.75rem; font-family:ui-monospace,Menlo,monospace; letter-spacing:.15em; text-transform:uppercase; color:var(--accent); margin-bottom:.35rem}
+  .p code{display:block; font:.8rem/1.55 ui-monospace,Menlo,monospace; color:var(--dim); white-space:pre-wrap}
+  footer{padding:3rem 0 1rem; color:var(--faint); font-size:.8rem; text-align:center}
+  footer a{color:var(--dim)}
+  .note{background:var(--panel2); border:1px solid var(--line); border-left:3px solid var(--accent); border-radius:8px; padding:1rem 1.2rem; font-size:.9rem; color:var(--dim); margin:1.2rem 0}
+</style>
+</head>
+<body>
+
+<header class="wrap">
+  <div class="k">Entre a Forma e o Silêncio</div>
+  <h1>Adamastor — 10 Versões</h1>
+  <p class="sub">Dez reworks de uma mesma peça-base, cada um a contar a mesma viagem — a calma, o monstro, o mundo distante, o regresso — numa gramática musical diferente.</p>
+</header>
+
+<section class="wrap">
+  <h2>A base</h2>
+  <p>Todas as versões nascem da mesma peça de referência: uma reconstrução da <em>SLEEP: Tranquility Base</em> (Max Richter), montada no Suno Studio a partir de 99 segmentos WAV colocados de forma gapless. Essa peça vive na primeira track do projeto e serve de <strong>referência de contexto</strong>: cada versão foi gerada numa track própria, <strong>por baixo</strong> dela, alinhada ao mesmo tempo — o Suno usa o material de cima como referência ao gerar.</p>
+  <p class="mut">A história que todas contam vem do episódio do Adamastor n'<em>Os Lusíadas</em> — mas os prompts nunca o nomeiam: traduzem-no em som.</p>
+  <div class="story">
+    <div class="st"><b>I — A partida</b>o mar imóvel, a expectativa, um aviso grave ao longe</div>
+    <div class="st"><b>II — A tempestade</b>o ser vil, poderoso e tempestuoso — nunca heroico</div>
+    <div class="st"><b>III — O mundo distante</b>a luz modal, a descoberta, a transformação da linguagem</div>
+    <div class="st"><b>IV — O regresso</b>a harmonia radiante a dissolver-se no silêncio</div>
+  </div>
+</section>
+
+<section class="wrap">
+  <h2>O skill &amp; o método</h2>
+  <p>As versões foram criadas pelo skill <strong>sonografia-curadoria</strong> (MODO A — Rework em andamentos), que fixa o método e deixa variar apenas o motivo e a estrutura:</p>
+  <ul>
+    <li><strong>Track nova por baixo da referência</strong> — nunca à frente nem atrás; a geração é «em contexto».</li>
+    <li><strong>Regiões encostadas</strong> — cada andamento começa exatamente no fim do anterior (gap 0, verificado no estado do editor).</li>
+    <li><strong>Prompts curtos em linguagem musical</strong> (250–470 caracteres) — instrumentação, textura, harmonia, dinâmica, luz; proibidos nomes, personagens e narrativa.</li>
+    <li><strong>Cada andamento resolve dentro do próprio prompt</strong> — termina sempre a dissolver; nunca há «caudas» geradas à parte (criariam emendas duras).</li>
+    <li><strong>O II é vil por gestos</strong> — clusters graves a ranger, metais destimbrados a rosnar, ruído granular negro, sub abissal; sem melodia, sem swells nobres ou triunfantes.</li>
+    <li><strong>Instrumental sempre</strong> — <em>sem voz, nunca</em>; a única «voz» é a melodia de piano.</li>
+  </ul>
+  <div class="note">Cinco versões estão em <strong>4 andamentos</strong> (quatro gerações encostadas, ~5 min) e cinco em <strong>peça única</strong> (uma só geração que percorre todo o arco, ~4 min — o máximo de uma geração do Suno). A duração segue a regra do projeto: «dê o que der».</div>
+</section>
+
+<section class="wrap">
+  <h2>A gramática</h2>
+  <p class="mut">Âncora em Max Richter (post-minimal: células repetitivas, cordas + piano, o mínimo de notas, harmonia lenta e consonante), com variações dentro da gramática do projeto:</p>
+  <div class="grammar">
+    <div class="gcell"><b>Sakamoto — alma</b><span>melodia humana, frágil, nunca alterada</span></div>
+    <div class="gcell"><b>Sebastian Plano — corpo</b><span>espaço, respiração; violoncelos em camadas, acústico processado</span></div>
+    <div class="gcell"><b>Alva Noto — ar</b><span>sines, poeira glitch, microsound dissolvido na ressonância</span></div>
+    <div class="gcell"><b>Silêncio — unificador</b><span>every sound must justify its existence</span></div>
+  </div>
+</section>
+
+<section class="wrap" id="versoes">
+  <h2>As dez versões</h2>
+
+  <!-- V1 -->
+  <div class="v" style="--vc:var(--c1)">
+    <div class="head"><div class="num">VERSÃO 01 · 4 ANDAMENTOS · 4:57</div><h3>Maré Negra</h3>
+    <div class="meta">lente: <em>gramática-base — o mar como matéria</em></div></div>
+    <div class="desc">Pads que sobem e descem como maré, undertow abissal na tempestade, a água a tornar-se luminosa na descoberta e a maré a recuar na dissolução final.</div>
+    <audio controls preload="none" src="audio/01-mare-negra.mp3"></audio>
+    <details><summary>Prompts (4)</summary>
+      <div class="p"><b>I — a partida</b><code>Instrumental, no vocals. Sparse fragile grand piano over wide slow maj9 pads that swell and recede like a dark tide, distant bowed cello, spectral dust in the resonance. Suspended, expectant, still water. Very slow, tidal, non-cadential, long silences and reverb tails. No drums, no beat.</code></div>
+      <div class="p"><b>II — a tempestade (vil)</b><code>Instrumental, no vocals. A malevolent storm at sea: abyssal sub drone like a black undertow, grinding dissonant low clusters in waves, snarling detuned brass-like swells, shrieking string harmonics as spray, churning dark granular noise. Cruel, monstrous, seething; no melody, no triumph, no heroic swells. Collapsing into cold still water. No drums, no beat.</code></div>
+      <div class="p"><b>III — o mundo distante</b><code>Instrumental, no vocals. The water turns luminous: open fifths with a raised-fourth Lydian colour, soft bells and faint plucked resonance floating on warm slow pads, sparse fragile piano drifting wider and stranger. Luminous, saline, exploratory. Very slow, tidal, non-cadential, spectral dust and long reverb tails. No drums, no beat.</code></div>
+      <div class="p"><b>IV — o regresso</b><code>Instrumental, no vocals. Warm radiant maj9 harmony over a calming sea: tender fragile grand piano singing a human melody, lush evolving pads ebbing away like a receding tide, distant cello, soft spectral light. Slowly dissolving into stillness and silence, long reverb tails, room tone remaining. Very slow, radiant, non-cadential. No drums, no beat.</code></div>
+    </details>
+  </div>
+
+  <!-- V2 -->
+  <div class="v" style="--vc:var(--c2)">
+    <div class="head"><div class="num">VERSÃO 02 · 4 ANDAMENTOS · 5:02</div><h3>Madeira Velha</h3>
+    <div class="meta">lente: <em>Sebastian Plano — violoncelos em camadas, madeira orgânica</em></div></div>
+    <div class="desc">Um pequeno ensemble de violoncelos sobrepostos, respiração de arco e rangidos de madeira; a tempestade é um casco de navio a ranger e estalar.</div>
+    <audio controls preload="none" src="audio/02-madeira-velha.mp3"></audio>
+    <details><summary>Prompts (4)</summary>
+      <div class="p"><b>I</b><code>Instrumental, no vocals. Layered soft cellos like a small chamber ensemble, sparse fragile grand piano, wooden creaks and bow-breath dissolved in the resonance, warm slow maj9 swells. Intimate, expectant, still. Very slow, tidal, non-cadential, long silences and reverb tails. No drums, no beat.</code></div>
+      <div class="p"><b>II (vil)</b><code>Instrumental, no vocals. A malevolent storm of bowed wood: cellos grinding in dissonant low clusters, scraped strings snarling, deep hull-like creaks and groans, abyssal drone, churning dark granular noise. Cruel, monstrous, seething; no melody, no triumph, no heroic swells. Splintering, then collapsing into cold silence. No drums, no beat.</code></div>
+      <div class="p"><b>III</b><code>Instrumental, no vocals. Layered cellos open into luminous fifths with a raised-fourth Lydian colour, soft plucked wood and faint bells over warm evolving pads, sparse fragile piano wandering wider and stranger. Luminous, organic, exploratory. Very slow, breathing, non-cadential, spectral dust and reverb tails. No drums, no beat.</code></div>
+      <div class="p"><b>IV</b><code>Instrumental, no vocals. Warm layered cellos in radiant maj9 harmony, tender fragile grand piano singing a human melody, bow-breath and soft spectral light in the resonance. Slowly thinning, dissolving into stillness and silence, long reverb tails, wood settling into room tone. Very slow, radiant, non-cadential. No drums, no beat.</code></div>
+    </details>
+  </div>
+
+  <!-- V3 -->
+  <div class="v" style="--vc:var(--c3)">
+    <div class="head"><div class="num">VERSÃO 03 · PEÇA ÚNICA · 4:00</div><h3>Caderno Azul</h3>
+    <div class="meta">lente: <em>Max Richter — The Blue Notebooks</em></div></div>
+    <div class="desc">A história inteira num só arco contínuo: células de cordas quentes e piano de câmara sobre room tone, à maneira do Richter de 2004.</div>
+    <audio controls preload="none" src="audio/03-caderno-azul.mp3"></audio>
+    <details><summary>Prompt (arco único)</summary>
+      <div class="p"><b>arco</b><code>Instrumental, no vocals. One continuous arc of warm repeating string cells and intimate chamber piano over faint room tone: stillness and quiet expectation; then a black storm rises, grinding low string clusters, snarling dissonant swells, churning dark granular noise, cruel and monstrous, never heroic; it collapses into luminous open fifths and strange light; finally radiant maj9 strings dissolve into silence, long tails. Post-minimal, very slow. No drums, no beat.</code></div>
+    </details>
+  </div>
+
+  <!-- V4 -->
+  <div class="v" style="--vc:var(--c4)">
+    <div class="head"><div class="num">VERSÃO 04 · 4 ANDAMENTOS · 4:57</div><h3>Poeira e Ferro</h3>
+    <div class="meta">lente: <em>Alva Noto — Vrioon; piano + sines, ferrugem digital</em></div></div>
+    <div class="desc">Piano sobre sines puros e poeira glitch; a tempestade é uma máquina — estática distorcida, drones metálicos, clusters corroídos de ferrugem digital.</div>
+    <audio controls preload="none" src="audio/04-poeira-e-ferro.mp3"></audio>
+    <details><summary>Prompts (4)</summary>
+      <div class="p"><b>I</b><code>Instrumental, no vocals. Sparse fragile grand piano over pure sine tones, microscopic glitch dust and digital air dissolved into the resonance, faint cold metallic shimmer. Suspended, expectant, precise, still. Very slow, minimal, non-cadential, long silences and reverb tails. No drums, no beat.</code></div>
+      <div class="p"><b>II (vil)</b><code>Instrumental, no vocals. A malevolent storm of iron: harsh distorted static bursts, grinding metallic drones, jagged glitch shards, abyssal sub bass pressure, dissonant clusters corroded with digital rust. Cruel, monstrous, seething, machine-cold; no melody, no triumph, no heroic swells. Decaying at last into cold sine silence. No drums, no beat.</code></div>
+      <div class="p"><b>III</b><code>Instrumental, no vocals. The dust turns luminous: open fifths with a raised-fourth Lydian colour carried by pure sine tones and soft bells, sparse fragile piano exploring wider and stranger over glassy digital air. Luminous, precise, exploratory. Very slow, minimal, non-cadential, glitch dust and long reverb tails. No drums, no beat.</code></div>
+      <div class="p"><b>IV</b><code>Instrumental, no vocals. Warm radiant maj9 harmony carried by soft sine tones, tender fragile grand piano singing a human melody, glitch dust thinning to single sparks of digital light. Slowly dissolving into stillness and silence, long reverb tails fading to pure quiet air. Very slow, minimal, radiant, non-cadential. No drums, no beat.</code></div>
+    </details>
+  </div>
+
+  <!-- V5 -->
+  <div class="v" style="--vc:var(--c5)">
+    <div class="head"><div class="num">VERSÃO 05 · PEÇA ÚNICA · 4:00</div><h3>Sono Profundo</h3>
+    <div class="meta">lente: <em>Max Richter — Sleep; noturno, sustentado</em></div></div>
+    <div class="desc">Cordas graves sustentadas e drones lentos a respirar como o sono; o monstro é um swell que sobe do fundo e volta a afundar-se.</div>
+    <audio controls preload="none" src="audio/05-sono-profundo.mp3"></audio>
+    <details><summary>Prompt (arco único)</summary>
+      <div class="p"><b>arco</b><code>Instrumental, no vocals. One continuous nocturnal arc of sustained low strings and deep slow drones, sparse piano notes far apart, breathing like sleep: dark stillness; a vast malevolent swell rises from below, grinding low clusters, seething and monstrous, never heroic; it recedes into pale open fifths and strange calm light; finally warm low strings dissolve into silence and room tone. Very slow, sustained, post-minimal. No drums, no beat.</code></div>
+    </details>
+  </div>
+
+  <!-- V6 -->
+  <div class="v" style="--vc:var(--c6)">
+    <div class="head"><div class="num">VERSÃO 06 · 4 ANDAMENTOS · 4:58</div><h3>Câmara de Cordas</h3>
+    <div class="meta">lente: <em>Richter × Plano — quinteto de câmara íntimo</em></div></div>
+    <div class="desc">Um quinteto de cordas de câmara, próximo e humano; a tempestade grita sul ponticello e desliza em glissandi enjoados.</div>
+    <audio controls preload="none" src="audio/06-camara-de-cordas.mp3"></audio>
+    <details><summary>Prompts (4)</summary>
+      <div class="p"><b>I</b><code>Instrumental, no vocals. An intimate string quintet with sparse fragile grand piano: warm sustained chords in slow repeating cells, gentle bow changes audible, close and human. Suspended, expectant, still, chamber-like. Very slow, tidal, non-cadential, long silences and reverb tails. No drums, no beat.</code></div>
+      <div class="p"><b>II (vil)</b><code>Instrumental, no vocals. A malevolent storm for strings: low cellos and basses grinding dissonant clusters, violins shrieking sul ponticello, scraped bows snarling, seasick downward glissandi, dark granular undertow. Cruel, monstrous, seething; no melody, no triumph, no heroic swells. Collapsing at last into cold silence. No drums, no beat.</code></div>
+      <div class="p"><b>III</b><code>Instrumental, no vocals. The quintet opens into luminous open fifths with a raised-fourth Lydian colour, high harmonics like distant bells, sparse fragile piano wandering wider and stranger between the strings. Luminous, intimate, exploratory. Very slow, breathing, non-cadential, long reverb tails. No drums, no beat.</code></div>
+      <div class="p"><b>IV</b><code>Instrumental, no vocals. The quintet in warm radiant maj9 harmony, tender fragile grand piano singing a human melody among the strings, soft spectral light. Voices thinning one by one, dissolving into stillness and silence, long reverb tails, bow settling into room tone. Very slow, radiant, non-cadential. No drums, no beat.</code></div>
+    </details>
+  </div>
+
+  <!-- V7 -->
+  <div class="v" style="--vc:var(--c7)">
+    <div class="head"><div class="num">VERSÃO 07 · PEÇA ÚNICA · 4:00</div><h3>Luz de Inverno</h3>
+    <div class="meta">lente: <em>Max Richter — On the Nature of Daylight; o mínimo de notas</em></div></div>
+    <div class="desc">Uma elegia de cordas de claridade dolorosa, com o mínimo de notas possível; a escuridão é um undertow que incha por baixo e escoa.</div>
+    <audio controls preload="none" src="audio/07-luz-de-inverno.mp3"></audio>
+    <details><summary>Prompt (arco único)</summary>
+      <div class="p"><b>arco</b><code>Instrumental, no vocals. One continuous arc with the minimum of notes: a slow luminous string elegy of aching clarity over quiet piano, cold morning light; a black dissonant undertow swells beneath, grinding and monstrous, never heroic, then drains away; pale open fifths widen into strange calm; radiant maj9 strings thin to a single held tone dissolving into silence. Very slow, clear, post-minimal. No drums, no beat.</code></div>
+    </details>
+  </div>
+
+  <!-- V8 -->
+  <div class="v" style="--vc:var(--c8)">
+    <div class="head"><div class="num">VERSÃO 08 · 4 ANDAMENTOS · 5:00</div><h3>Vidro e Sal</h3>
+    <div class="meta">lente: <em>Noto × Plano — harmónicos de vidro, sinos, gelo</em></div></div>
+    <div class="desc">Harmónicos vítreos e sinos como gelo; a tempestade é vidro a estalar — rajadas cristalinas, estilhaços, clusters gelados sobre sub abissal.</div>
+    <audio controls preload="none" src="audio/08-vidro-e-sal.mp3"></audio>
+    <details><summary>Prompts (4)</summary>
+      <div class="p"><b>I</b><code>Instrumental, no vocals. Glassy high harmonics and soft bells like ice, sparse fragile grand piano, thin crystalline pads, salt-air shimmer dissolved in the resonance. Suspended, expectant, cold and clear. Very slow, tidal, non-cadential, long silences and reverb tails. No drums, no beat.</code></div>
+      <div class="p"><b>II (vil)</b><code>Instrumental, no vocals. A malevolent storm of breaking glass: shattering crystalline bursts, shrieking high harmonics, grinding icy dissonant clusters, abyssal sub drone beneath frozen shards, churning brittle granular noise. Cruel, monstrous, seething, glacial; no melody, no triumph, no heroic swells. Cracking apart, then collapsing into cold silence. No drums, no beat.</code></div>
+      <div class="p"><b>III</b><code>Instrumental, no vocals. The ice turns luminous: open fifths with a raised-fourth Lydian colour rung on glass harmonics and soft bells, sparse fragile piano exploring wider and stranger through crystalline pads. Luminous, cold-bright, exploratory. Very slow, tidal, non-cadential, salt shimmer and long reverb tails. No drums, no beat.</code></div>
+      <div class="p"><b>IV</b><code>Instrumental, no vocals. Warm radiant maj9 harmony glowing through glass harmonics and soft bells, tender fragile grand piano singing a human melody, crystalline pads melting like thawing ice. Slowly dissolving into stillness and silence, long reverb tails, faint salt shimmer remaining. Very slow, radiant, non-cadential. No drums, no beat.</code></div>
+    </details>
+  </div>
+
+  <!-- V9 -->
+  <div class="v" style="--vc:var(--c9)">
+    <div class="head"><div class="num">VERSÃO 09 · PEÇA ÚNICA · 4:00</div><h3>Respiração</h3>
+    <div class="meta">lente: <em>Plano + «More Breathing Space» — máximo espaço negativo</em></div></div>
+    <div class="desc">Beleza pela ausência: frases de piano seguidas de longos silêncios, pads que desaparecem compassos inteiros; o monstro fica longe, como pressão distante.</div>
+    <audio controls preload="none" src="audio/09-respiracao.mp3"></audio>
+    <details><summary>Prompt (arco único)</summary>
+      <div class="p"><b>arco</b><code>Instrumental, no vocals. One continuous arc of maximum negative space: a fragile piano phrase, then long silence; pads that appear and vanish for whole bars; the storm only as a distant dark pressure swelling under the quiet, grinding softly, monstrous but far away, never heroic; then pale open fifths; finally a single warm chord dissolving into room tone. Beauty through absence. Extremely slow. No drums, no beat.</code></div>
+    </details>
+  </div>
+
+  <!-- V10 -->
+  <div class="v" style="--vc:var(--c10)">
+    <div class="head"><div class="num">VERSÃO 10 · PEÇA ÚNICA · 4:00</div><h3>Cinza</h3>
+    <div class="meta">lente: <em>«Between Form and Silence» + Noto — depurado ao osso</em></div></div>
+    <div class="desc">Só o essencial: notas de piano em luz cinzenta, ar de sines, quase-silêncio; a tempestade reduzida a uma pressão surda ao fundo. <em>Every sound must justify its existence.</em></div>
+    <audio controls preload="none" src="audio/10-cinza.mp3"></audio>
+    <details><summary>Prompt (arco único)</summary>
+      <div class="p"><b>arco</b><code>Instrumental, no vocals. One continuous arc stripped to the bone: only essential piano notes in grey light, faint sine air, near-silence; the storm reduced to a dull deep pressure that swells and grinds far beneath, monstrous, never heroic, then fades; a pale open fifth; a last single note and its long decaying tail into room tone. Every sound must justify its existence. Extremely slow, austere. No drums, no beat.</code></div>
+    </details>
+  </div>
+
+</section>
+
+<section class="wrap">
+  <h2>Ficha técnica</h2>
+  <ul>
+    <li class="mut"><strong>Geração:</strong> Suno Studio (v4.5-all), julho de 2026 — cada Create devolve 2 takes; foi promovida a melhor de cada par.</li>
+    <li class="mut"><strong>Método:</strong> skill <em>sonografia-curadoria</em> (MODO A — Rework em andamentos), executado por Claude via automação do browser: track por baixo da referência, regiões encostadas (verificadas por estado), prompts curtos em linguagem musical.</li>
+    <li class="mut"><strong>Curadoria:</strong> Eduardo Couto · gramática do projeto <em>Entre a Forma e o Silêncio</em> (Paulo Caius).</li>
+    <li class="mut"><strong>Referências estudadas:</strong> Max Richter (<em>The Blue Notebooks</em>, <em>Sleep</em>, <em>On the Nature of Daylight</em>), Sebastian Plano (<em>Verve</em>, <em>Save Me Not</em>), Alva Noto (<em>Vrioon</em>/<em>Insen</em> com Ryuichi Sakamoto, <em>Xerrox</em>).</li>
+  </ul>
+</section>
+
+<footer class="wrap">
+  Entre a Forma e o Silêncio · Adamastor — 10 Versões · 2026
+</footer>
+
+</body>
+</html>

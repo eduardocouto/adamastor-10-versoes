@@ -1,0 +1,37 @@
+[
+  {"slug":"01-mare-negra","name":"Maré Negra","clips":[
+    {"asset":"23de00b7-b48c-4b10-aa4c-5a72a23f019b","off":0.274,"dur":73.435},
+    {"asset":"13b6ea81-469c-4e3b-af56-882352ebe1da","off":1.434,"dur":70.360},
+    {"asset":"8bc27f69-ff19-4bc7-899d-63976d90339b","off":1.860,"dur":80.205},
+    {"asset":"b3bf2000-1a89-414e-9c4e-0e13f24be39a","off":0.0,"dur":73.407}]},
+  {"slug":"02-madeira-velha","name":"Madeira Velha","clips":[
+    {"asset":"1c383f7c-8bc4-41cc-9b06-aa15f30477fe","off":0.190,"dur":73.435},
+    {"asset":"165d838d-2b81-4107-a0ae-f6254c88c4bf","off":1.432,"dur":70.360},
+    {"asset":"f45c2f3b-cee0-4401-a0c2-d0a992399128","off":2.868,"dur":80.205},
+    {"asset":"4eaa58b2-3d5a-4107-a7a6-1a40c0fa1a37","off":0.0,"dur":77.703}]},
+  {"slug":"03-caderno-azul","name":"Caderno Azul","clips":[
+    {"asset":"2e631230-a655-4801-ab74-277e566524c1","off":0.154,"dur":240.206}]},
+  {"slug":"04-poeira-e-ferro","name":"Poeira e Ferro","clips":[
+    {"asset":"85b658e1-29bb-4251-8168-93d0ec76cb2a","off":0.055,"dur":73.435},
+    {"asset":"59610ecc-1fcd-4488-a187-48e2ec28ecc4","off":1.384,"dur":70.360},
+    {"asset":"62aa1400-b1f0-402f-baa3-41169749d519","off":1.845,"dur":80.205},
+    {"asset":"40e48de1-eb86-4efe-9449-29d3515bc333","off":0.0,"dur":73.407}]},
+  {"slug":"05-sono-profundo","name":"Sono Profundo","clips":[
+    {"asset":"82879bbe-bd51-415b-9270-1ee9cf6343a6","off":0.065,"dur":239.935}]},
+  {"slug":"06-camara-de-cordas","name":"Câmara de Cordas","clips":[
+    {"asset":"1b1039e6-73d3-4363-888a-9bb505b2ab26","off":0.0,"dur":73.972},
+    {"asset":"721de525-1b70-4e5d-a2cf-abcf60e1a814","off":1.972,"dur":71.972},
+    {"asset":"1befe2ab-7748-47ae-9ea1-b1bcd3ff6963","off":2.015,"dur":78.056},
+    {"asset":"28c407dc-d952-4829-94e9-6201b29fe03c","off":0.0,"dur":73.944}]},
+  {"slug":"07-luz-de-inverno","name":"Luz de Inverno","clips":[
+    {"asset":"eb149da3-c1fb-41bf-970f-897a4a56b76b","off":0.0,"dur":240.087}]},
+  {"slug":"08-vidro-e-sal","name":"Vidro e Sal","clips":[
+    {"asset":"44eaa1e4-ef74-4c47-b1e8-9a149cf7c88e","off":0.135,"dur":72.898},
+    {"asset":"1a15396b-e42b-4ca2-aa26-affb1bcd8f6e","off":0.896,"dur":75.731},
+    {"asset":"028bb5db-8fb1-45d5-b3f8-d6c7db0e04bd","off":0.680,"dur":75.371},
+    {"asset":"6aea3458-5c32-4432-be15-ec1f4b24dbf3","off":2.0,"dur":75.555}]},
+  {"slug":"09-respiracao","name":"Respiração","clips":[
+    {"asset":"03813a60-efc4-48d4-850f-5ea50e7016de","off":0.025,"dur":239.975}]},
+  {"slug":"10-cinza","name":"Cinza","clips":[
+    {"asset":"94dd0998-99cd-44fe-a4ff-73fa7d965451","off":0.135,"dur":239.865}]}
+]
