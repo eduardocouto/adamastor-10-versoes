@@ -96,6 +96,250 @@
   <div class="note">O ciclo completo desta página: injetar a referência → compor por camadas (<em>Assíncrona</em>) → rework por cima (<em>Camões</em>) → vinte variações para escolha. Cada passo alimentou o seguinte — e o que se aprendeu voltou para os skills.</div>
 </section>
 
+
+<section class="wrap" id="skillmd">
+  <h2>O <em style="text-transform:none;letter-spacing:normal">SKILL.md</em>, explicado</h2>
+  <p>Este é o ficheiro real — o <code style="display:inline;font-size:.85em">SKILL.md</code> da <strong>sonografia-curadoria</strong> tal como vive no repositório, bloco a bloco, com uma nota sobre o que cada parte faz e porquê. (O texto original está em cada bloco expansível, sem edições.)</p>
+  <p class="mut">O <strong>cabeçalho YAML</strong> é o mecanismo de descoberta: o <code style='display:inline;font-size:.85em'>name</code> identifica o skill e a <code style='display:inline;font-size:.85em'>description</code> diz à IA <em>quando</em> o deve invocar — é lida em todas as conversas, por isso descreve situações de uso, nunca o processo (senão a IA seguia o resumo e saltava o manual).</p>
+  <details><summary>ver o texto original</summary>
+    <div class="p"><code>---
+name: sonografia-curadoria
+description: Curadoria e REWORKS &quot;Entre a Forma e o Silêncio&quot; / Sonografia — reworks no Suno Studio (N andamentos encostados OU peça única de arco contínuo) por baixo de uma peça de referência, séries de N versões com lentes instrumentais distintas, e prompts Suno INSTRUMENTAIS na gramática Sakamoto × Sebastian Plano × Alva Noto × silêncio. Use quando pedirem um rework de uma peça no Suno Studio, várias versões de uma peça, criar/afinar um prompt Suno da Sonografia, traduzir um motivo/tema em linguagem musical, montar/exportar os MP3 das versões, aplicar a gramática do Paulo Caius, ou dizerem &quot;/sonografia-curadoria&quot;. SEMPRE instrumental, nunca voz.
+argument-hint: &lt;motivo + estrutura (N andamentos | peça única | série de versões) + peça de referência no Studio | ou conceito/melodia para prompt único&gt;
+---</code></div>
+  </details>
+  <p class="mut">O preâmbulo declara a identidade («não é um motor genérico — é o curador da peça») e os três modos de trabalho. Um skill começa por dizer o que É antes de dizer o que faz.</p>
+  <details><summary>ver o texto original</summary>
+    <div class="p"><code># Sonografia — Curadoria &amp; Reworks &quot;Entre a Forma e o Silêncio&quot;
+
+Skill de curadoria com dois modos. **Não é um motor genérico — é o curador da peça.**
+
+- **MODO A — Rework (Suno Studio)**: transformar uma peça de referência numa nova peça gerada **por baixo** dela, alinhada. Duas estruturas: **N andamentos encostados** ou **peça única** (arco contínuo numa só geração). Variáveis: o **motivo** e a **estrutura** — o método é fixo.
+- **MODO B — Prompt único**: o motor original — um conceito/melodia → um prompt Suno pronto a colar.
+- **MODO C — Série de versões**: o MODO A repetido N vezes sobre a mesma referência e o mesmo motivo, cada versão numa **track nomeada** com uma **lente instrumental** distinta, com registo para memória descritiva.</code></div>
+  </details>
+  <p class="mut">A primeira regra é a inegociável — e diz o que fazer se o utilizador a desafiar (recusar e propor alternativa). Regras absolutas escrevem-se primeiro e sem exceções, porque a IA procura sempre a exceção.</p>
+  <details><summary>ver o texto original</summary>
+    <div class="p"><code>## Regra absoluta (não negociável)
+
+**SEM VOZ. NUNCA.** Nada de cantar, falar, coro, humming, samples vocais. `Instrumental, no vocals` em todos os outputs. A única &quot;voz&quot; é a melodia de piano. Se o utilizador pedir voz, recusa e explica que viola a gramática do projeto — sugere a melodia de piano como portadora emocional em alternativa.</code></div>
+  </details>
+  <p class="mut">A fonte de verdade estética: os quatro eixos do género (com instruções de fallback se os ficheiros de referência não existirem). Nota como o eixo Alva Noto já incorpora o vocabulário da investigação — os skills evoluem.</p>
+  <details><summary>ver o texto original</summary>
+    <div class="p"><code>## A gramática (fonte de verdade)
+
+Se existir, lê primeiro `~/Projects/claude-ai-music-skills/genres/between-form-and-silence/README.md` (género completo). Caso não exista, lê a cópia empacotada em `reference/between-form-and-silence.md`. Se nenhum existir, usa o resumo abaixo — é auto-suficiente.
+
+**Os quatro eixos:**
+- **Sakamoto = alma** — melodia humana, frágil, expressiva; NUNCA alterar a identidade melódica.
+- **Sebastian Plano = corpo** — espaço, respiração, arquitetura; pads que evoluem, violoncelo, harmónicos, silêncio esculpido.
+- **Alva Noto = ar** — textura microscópica invisível: `rhythmic constellations` de impulsos e clicks, grãos de samples, white-noise dust, `piano decays dissolving into sine waves` — dissolvido na ressonância do piano. Nunca camada separada e identificável, nunca glitch decorativo, nunca sines nus.
+- **Silêncio = unificador** — elemento composicional. O espaço entre notas vale tanto como as notas. &quot;Every sound must justify its existence.&quot;
+
+**Princípio dominante:** depuração. Menos elementos, mais respiração, beleza pela ausência. Galeria de museu vazia, luz da manhã, tempo suspenso.
+
+**Harmonia:** voicings maj9 largos, movimento por quartas, progressões circulares não-cadenciais. Extremamente lento, tidal.
+
+**Gestos Richter/Noto verificados** (vocabulário EN pronto a usar nos prompts + erros de imitação a evitar): `reference/richter-noto-gestos.md`.</code></div>
+  </details>
+  <p class="mut">O coração do skill: <em>traduzir o motivo em linguagem musical, nunca o nomear</em> — com listas explícitas de PROIBIDO e OBRIGATÓRIO, limites de caracteres, e as bases musicais verificadas (Richter/Noto) que se tornaram obrigatórias em todos os prompts. Cada bala desta secção nasceu de um erro real observado.</p>
+  <details><summary>ver o texto original</summary>
+    <div class="p"><code>## A regra de ouro dos prompts (vale para os dois modos)
+
+**Traduz o motivo em linguagem musical — nunca o nomeies.** O Suno não sabe quem é o Adamastor; sabe o que é um drone grave a inchar. Escrever o nome/história no prompt gasta caracteres e não guia o som.
+
+- **PROIBIDO no prompt**: nomes próprios, personagens, lugares, títulos de obras, narrativa (&quot;the Adamastor from Canto V…&quot;, &quot;Movement II of…&quot;, &quot;a paradisiacal island where Venus…&quot;).
+- **OBRIGATÓRIO**: só gestos musicais — instrumentação, textura, harmonia, dinâmica, movimento, luz. Como SOA, não o que representa.
+- **Curto**: cada prompt de andamento mira **250–350 caracteres** (nunca &gt;400). Esqueleto: `Instrumental, no vocals.` + 3–5 gestos musicais + carácter (2–4 adjetivos) + andamento/espaço + `No drums, no beat.`
+- **Contraste autorizado**: um andamento pode quebrar deliberadamente o &quot;sem clímax&quot; da gramática (decisão artística — ex.: um andamento-tempestade). Mas o drama constrói-se com gestos (&quot;vast low rumbling drone swelling, thunder in the sub-bass&quot;), não com adjetivos épicos vazios; e **dissolve sempre no fim**. Se o mal tiver de soar **vil** (não épico): sem melodia, sem swells nobres/triunfantes — clusters graves a ranger, metais destimbrados a rosnar, harmónicos a guinchar, ruído granular negro, pitch bends descendentes enjoados, sub abissal; incluir `no melody, no triumph, no heroic swells` no prompt.
+- **Prompt de arco único** (peça inteira numa geração, 400–470 chars): encadear as estações com `then / it collapses into / finally`. Esqueleto: `Instrumental, no vocals. One continuous arc [lente]: [estação 1, calma]; then [tempestade vil], never heroic; it collapses into [luz modal]; finally [harmonia radiante] dissolving into silence, long tails. [carácter/tempo]. No drums, no beat.`
+
+**Bases musicais OBRIGATÓRIAS nos prompts** (vocabulário verificado — detalhe em `reference/richter-noto-gestos.md`):
+- **Cordas contemplativas (lentes Richter/câmara): SEMPRE `espressivo, generous vibrato`** — cordas planas e mecânicas são o erro nº1 de imitação; escrita em `layered ostinati, short repeating cells`; harmonia com `first-inversion triads, warm and unresolved` (convive com os maj9 do Paulo).
+- **Atmosfera Richter**: `heavy stacked reverb, long plate tails` + `faint field-recording ambience (room air, distant clocks)` — a riqueza é textural/de produção, NUNCA complexidade harmónica ou rítmica.
+- **Noto/textura: NUNCA glitch decorativo nem sines nus** — sempre empilhado: `short impulses and dry clicks in rhythmic constellations`, `granular micro-textures from sampled grains`, `white-noise dust at the edge of hearing`; com piano presente: `piano decays dissolving into calculated sine waves`.
+- **Forma longa/séries**: um motivo recorrente à *Dream source* (`a dream-source motif returning transformed`) como âncora de continuidade.
+
+**Tabela de tradução motivo→som (exemplos validados):**
+
+| Motivo (o que representa) | Linguagem musical (o que se escreve) |
+|---|---|
+| expectativa, mar imóvel, aviso grave | `sparse fragile grand piano, wide slow maj9 pads, distant espressivo cello with gentle vibrato, faint field-recording room air. Suspended, expectant, still.` |
+| tempestade, confronto, terror | `vast low rumbling drone swelling, dissonant orchestral-dark swells, thunder in the sub-bass, dense agitated granular noise, bowed cello straining. Menacing, immense, then dissolving to fragile calm.` |
+| mundo distante, descoberta, transformação | `open fifths, a raised-fourth Lydian colour, faint sitar-like resonance and soft bells dissolved into warm pads. Sparse piano exploring, wider and stranger. Luminous.` |
+| regresso transformado, amor, dissolução final | `warm radiant maj9 harmony, tender piano singing a human melody, lush evolving pads, soft spectral light. Slowly dissolving into stillness and silence, long reverb tails.` |</code></div>
+  </details>
+  <p class="mut">O procedimento operacional do rework: inputs, desenho antes de gastar créditos, e a execução validada no Studio passo a passo — incluindo números concretos (sobreposição 0,5–1,5 s, nunca mais de 2 s) aprendidos à custa de takes estragadas.</p>
+  <details><summary>ver o texto original</summary>
+    <div class="p"><code>## MODO A — Rework (Suno Studio)
+
+### Inputs
+1. **Peça de referência** — numa track do Suno Studio (a &quot;peça de cima&quot;). Pode ser uma peça injetada OU **uma composição da `sonografia-camadas`** (rework de 2.ª ordem: REF original muted, camadas unmuted como contexto — validado). Se a referência já existir noutro projeto, **Duplicate Project** reutiliza-a com amplitudes intactas sem re-injetar. **Se ainda não estiver no Studio** (é um ficheiro áudio local/externo), o passo 0 é injetá-la com o skill **`suno-segment-importer`** (corta em segmentos WAV sample-accurate e coloca-os gapless na track via `arrangeFile`, sem warp) — só depois começa o rework.
+2. **Motivo** — o tema/narrativa da nova peça (ex.: a viagem d&#x27;Os Lusíadas, as estações, um luto).
+3. **Estrutura** — decisão artística a partir da identidade do motivo, não regra do método:
+   - **N andamentos** (Camões pediu 4; outro motivo pode pedir 3 ou 5) — N gerações encostadas; dura ≈ a referência.
+   - **Peça única** — 1 geração com o arco inteiro. **Limite duro: o Suno gera no máx. ~240 s (4:00) por clip** — seleciona-se a região inteira, mas o clip ajusta-se ao áudio real depois de carregar; o arco fica completo dentro dos ~4:00 (&quot;dê o que der&quot;).
+   Se o utilizador não disser, propõe uma estrutura justificada pelo arco do motivo e confirma.
+
+### Desenho da peça (antes de tocar no Studio)
+1. Divide a duração da referência em N secções — iguais por omissão, proporcionais ao arco do motivo, ou (melhor, quando existir export `.json` da referência) **ancoradas ao envelope de energia/onsets** do `scripts/analyze-json.py`: pôr a tempestade onde a base é densa, a dissolução onde ela esvazia.
+2. Para cada andamento escreve **uma linha de intenção em PT** (para o utilizador) e o **prompt curto em EN** (regra de ouro acima). Peça única: um só prompt-arco (esqueleto na regra de ouro).
+3. **Cada andamento tem arco próprio e resolve dentro de si** — o prompt termina sempre com dissolução (`then dissolving to calm`, `slowly dissolving into stillness`). **NUNCA** gerar uma &quot;cauda de resolução&quot; como clip separado: duas gerações = emenda dura audível.
+4. O **último andamento dissolve a peça inteira no silêncio** (long reverb tails → room tone).
+5. Apresenta o plano (secções + prompts) ao utilizador antes de gastar créditos, salvo instrução para avançar direto.
+
+### Execução no Studio (procedimento validado 2026-07-03)
+&gt; Mecânica detalhada, calibração e o que NÃO funciona: `reference/suno-studio-rework.md`. Requer Claude in Chrome + sessão Suno.
+
+1. **Nova track POR BAIXO da referência** (`Add Track`) — vazia. É aqui que a peça nova nasce, **alinhada** com a de cima (nunca à frente nem atrás na mesma track). A geração é &quot;em contexto&quot;: o material acima serve de referência. **Renomear a track** com o nome da peça/versão (duplo clique no nome → cmd+A → escrever → Return; confirmar em `tracks[i].name`).
+2. Por cada andamento, em sequência:
+   a. Tipo de geração = **Song**; escrever o prompt do andamento no campo **Styles** (popover compacto com contador e botão Done; substituir com cmd+A, confirmar o contador, Done).
+   b. **Selecionar a região na track nova** — a começar **exatamente no fim do clip anterior** (andamento 1 começa em 0). Verificar por estado (`selection.anchorBeats/focusBeats`, `focusedTrackId` = track nova). **Alvo: sobreposição de 0,5–1,5 s** com o clip anterior — o Replace apara-o e os clips ficam encostados (gap 0). **&gt;2 s de sobreposição é perigoso**: come o final do andamento anterior (a dissolução da tempestade, p.ex.) — refazer o arrasto. Gap positivo → refazer 1–3 px antes.
+   c. **Create/Replace** (só ativa com região selecionada) → gera **2 takes** nas alternate lanes.
+   d. **Escolher a take por proxies** quando as Take Lanes expõem o `asset.id` (validado): descarregar as 2 do CDN e medir (RMS, max ≤ −1 dB, cauda dos últimos 10 s ≥ 6 dB abaixo do RMS global). Uma passa e outra não → promover a que passa; empate → menor RMS (contenção), **exceto no último andamento, onde a dissolução total vence** (é ele que leva a peça ao silêncio). Sem asset.id exposto → preferir a take que preenche a região.
+   e. **Promover** (menu ⋮ da track → Show Alternates → seta **↑**) → **Hide Alternates** (layout estável). Antes de cada Create seguinte, verificar mutes/solos por estado (o utilizador pode ter solado uma track para ouvir — o solo muta as outras de verdade).
+3. **Verificação final**: **reler os clips DEPOIS dos assets carregarem** (as durações ajustam-se ao áudio real — é aqui que as peças únicas revelam os ~240 s) e confirmar `gaps == []`. Confirmar mutes (peça nova audível; referência à escolha do utilizador) e metrónomo off.
+4. Cada Create gasta créditos (2 takes). Regenerar um andamento = mesma região + mesmo/afinado prompt.</code></div>
+  </details>
+  <p class="mut">A produção em série: tabela nome→estrutura→lente apresentada antes de gastar, paleta de lentes validada, e o registo obrigatório que alimenta a memória descritiva — foi este modo que criou as Séries I, II e III desta página.</p>
+  <details><summary>ver o texto original</summary>
+    <div class="p"><code>## MODO C — Série de versões (validado 2026-07-03: 10 versões &quot;Camões&quot;)
+
+O MODO A repetido N vezes sobre a mesma referência e o mesmo motivo. O que muda entre versões é a **lente instrumental** e, alternadamente, a **estrutura** (4 andamentos ↔ peça única).
+
+1. **Desenho da série**: tabela nome → estrutura → lente, apresentada antes de gastar créditos. Cada versão tem **nome próprio** (vai para o nome da track). Se o utilizador der uma âncora (ex.: Max Richter), pesquisar online as assinaturas sonoras dos artistas da gramática e distribuí-las pelas lentes.
+2. **Paleta de lentes validada** (adaptar gestos ao motivo; a tempestade vil traduz-se em cada material):
+   - **mar/maré** — pads como maré, undertow abissal, água escura → luminosa
+   - **madeira/cellos (Plano)** — violoncelos em camadas, bow-breath, casco a ranger
+   - **cordas de câmara (Richter)** — quinteto íntimo, `layered ostinati` de células repetitivas, **`espressivo, generous vibrato`**, tríades invertidas; tempestade sul ponticello, glissandi enjoados
+   - **sines/glitch (Noto Vrioon)** — piano + sines puros, `rhythmic constellations` de impulsos/clicks, `piano decays dissolving into sine waves`; tempestade de estática e ferrugem
+   - **vidro/gelo (Noto×Plano)** — harmónicos vítreos, sinos; tempestade de vidro a estalar
+   - **noturno sustentado (Richter Sleep)** — low strings, drones, respiração do sono
+   - **elegia clara (Richter Daylight)** — o mínimo de notas, claridade dolorosa
+   - **espaço negativo (v2 Paulo)** — frases + silêncios longos; o monstro só como pressão distante
+   - **depurado ao osso (v3 Paulo)** — só o essencial, tempestade como pressão surda
+3. **Registo obrigatório** num ficheiro de trabalho, atualizado versão a versão: nome, track, lente, estrutura, prompts finais com contagem de chars, takes escolhidas, posições dos clips, notas técnicas. É a fonte da **memória descritiva** final (e de uma eventual página).
+4. Por cada versão: track nova por baixo → renomear → MODO A (execução) → verificar → registar → Hide Alternates → próxima.
+
+### Entrega (MP3 + página) — opcional, quando pedido
+Montar os MP3 fiéis à timeline (não screenshots de áudio): extrair de `studioContext` o manifest (asset.id, `readStartSec`, duração por clip — snippet no reference), descarregar de `https://cdn1.suno.ai/{id}.mp3` e correr `python3 scripts/assemble.py &lt;manifest.json&gt; &lt;outdir&gt;` (apara cada clip ao offset/duração reais e concatena por versão). A página (GitHub Pages ou outra) leva: a base, o método/skill, a gramática, e por versão nome+lente+estrutura+prompts+player.</code></div>
+  </details>
+  <p class="mut">O motor original de prompts únicos (fora do Studio): template contado ao caracter, negative prompt, sliders calibrados e as variantes do Paulo. O modo mais antigo — os outros nasceram dele.</p>
+  <details><summary>ver o texto original</summary>
+    <div class="p"><code>## MODO B — Prompt único
+
+### Workflow
+1. **Lê o input**: conceito, descrição de melodia, ficheiro de referência, e/ou acordes do Paulo.
+2. **Se houver export `.json` do `sonografia.html`** (`forma-silencio-*.json` / `*.sonografia.json`), corre `python3 scripts/analyze-json.py &lt;ficheiro.json&gt;` e ancora o prompt aos factos reais (BLOCO 0: tónica→nota, BPM, onsets, envelope, contorno, progressão do Paulo transposta).
+3. Se faltar contexto essencial, faz **1–2 perguntas curtas** — não mais.
+4. Corre a checklist antes de escrever; produz os blocos por ordem (BLOCO 0 só com `.json`).
+
+### BLOCO 1 — Prompt Suno principal + Negative
+
+Style box em inglês. **LIMITE DURO: 1000 caracteres** — conta sempre (`printf &#x27;%s&#x27; &quot;...&quot; | wc -c`) **o texto final montado**, não só o template. Se passar, corta repetições/adjetivos, nunca a gramática: *sem voz · piano/forma preservada · pads Sebastian Plano · Alva Noto dissolvido · silêncio como material · sem drums/clímax*. Negative e estrutura são campos separados (não contam).
+
+Template compacto (~700 chars, folga para os factos do BLOCO 0):
+
+```
+Instrumental only, no vocals. A reimagining between form and silence. Preserve the lead piano/melodic form — human, fragile, never altered. Replace harmony with slowly evolving soft analogue pads, distant resonances, bowed cello harmonics (Sebastian Plano space). Alva Noto microsonic detail — spectral dust, granular particles, digital air — dissolved into the resonance, never a separate layer. Silence is compositional: long pauses, room tone, reverb tails. The piece breathes, emerging from silence and returning to it. Modern classical, ambient, electroacoustic. Fragile, intimate, timeless — an empty museum gallery at early light. Very slow, tidal, non-cadential. No drums, no climax, no build-up.
+```
+
+```
+[Structure — campo separado] [Intro] [Main Theme] [Bridge] [Outro] [End]
+```
+
+```
+[Negative Prompt — campo separado]
+vocals, singing, choir, spoken word, lyrics, drums, percussion, beat, rhythmic pulse,
+cinematic crescendo, dramatic build-up, climax, orchestral swell, glissandos, arpeggios,
+dense layering, harmonic modulation for effect, new motifs introduced late, excessive reverb wash,
+trailer dynamics, emotional overstatement, EDM, identifiable glitches
+```
+
+### BLOCO 1b — Sliders (incluir sempre)
+
+| Slider | Valor | Porquê |
+|---|---|---|
+| **Influência de Áudio** | alta — 60–80% | O WAV é a partitura; *a forma é a voz*. Só com WAV (Upload/Extend). |
+| **Influência de Estilo** | moderada-baixa — 30–45% | O texto guia sem impor clichés. |
+| **Estranheza** | baixa — 10–20% (nunca 0) | Só serve a poeira espectral Alva Noto. |
+
+Sem WAV: Estilo ≈45–55%. Com WAV: Áudio manda, Estilo ≈30%. Genérico → sobe Estilo; dramático/ruidoso → desce Estranheza; trai a forma → sobe Áudio.
+
+### BLOCO 2 — As 3 variantes validadas do Paulo (para A/B)
+- **v2 — More Breathing Space**: máximo espaço negativo; pads que desaparecem compassos inteiros. *Beauty through absence.*
+- **v3 — Between Form and Silence**: o mais depurado; secções só de ressonância de piano. *Every sound must justify its existence.*
+- **Invisible Alva Noto**: ouve-se Sakamoto, sente-se Sebastian Plano, quase não se percebe Alva Noto. *A collaboration that never existed.*
+
+(Gera o texto completo quando o utilizador escolher.)
+
+### BLOCO 3 — Bloco harmónico (se houver acordes)
+
+Se o Paulo deu acordes, integra-os como &quot;Harmonic Direction&quot; em inglês. Senão, oferece a referência e pergunta:
+
+```
+Cm9 → Fmaj9 → Bbmaj9 → Ebmaj9 → Abmaj9 → Dbmaj9 → Ebmaj9 → Cm9
+Cm9 interioridade · Fmaj9 luz · Bbmaj9 expansão · Ebmaj9 horizonte · Abmaj9 contemplação ·
+Dbmaj9 sonho · regresso transformado a Cm9. Voicings largos, quartas, sem cadências.
+```
+
+### BLOCO 4 — Stems por instrumento (Suno Studio) — só quando pedido
+
+Um prompt curto por stem (≤200 chars, telegráfico), todos ancorados à mesma tónica/BPM, instrumentais, **nunca stem de drums**, cada um deixa espaço. Ordem: drone/sub → pads → piano → cello → microtextura Alva Noto.
+
+```
+[Sub/Drone]  Deep sine pedal drone on the tonic, constant, barely moving, no rhythm, no attack. F minor, ~72 BPM.
+[Pads]       Slowly evolving warm analogue pad, wide maj9 swells, breathing, ambient bed. F minor, ~72 BPM.
+[Piano]      Sparse solo grand piano, fragile single notes, wide maj9 voicings, long pauses, human. F minor, ~72 BPM.
+[Cello]      Distant bowed cello harmonics, soft, sustained, occasional, fragile. F minor, ~72 BPM.
+[Alva Noto]  Microsonic spectral dust, granular clicks, digital air, very low level, dissolved, no beat. F minor, ~72 BPM.
+```</code></div>
+  </details>
+  <p class="mut">A checklist mostra-se marcada ANTES de entregar — obriga a IA a verificar-se a si própria contra cada regra. Sem checklist, as regras diluem-se com o cansaço do contexto.</p>
+  <details><summary>ver o texto original</summary>
+    <div class="p"><code>## Checklist de fidelidade (mostrar marcada antes de entregar)
+
+**Sempre:**
+- [ ] `Instrumental, no vocals` — zero voz
+- [ ] Sem drums / percussão / pulsação rítmica
+- [ ] Eletrónica Alva Noto invisível (não é camada separada)
+- [ ] Silêncio e espaço negativo preservados
+- [ ] **Zero nomes próprios / narrativa nos prompts** — só linguagem musical
+- [ ] Style box final **contado** ≤ 1000 chars (montado, não o template)
+
+**MODO A (rework):**
+- [ ] Track nova **por baixo** da referência (nunca à frente/atrás), **renomeada** com o nome da peça
+- [ ] Prompts de andamento **250–350 chars**; prompt de arco único **400–470 chars**
+- [ ] Regiões **encostadas** — sobreposição alvo 0,5–1,5 s (nunca &gt;2 s); `gaps == []` verificado no estado **após os assets carregarem**
+- [ ] Cada andamento **resolve dentro do próprio prompt** (nada de caudas separadas)
+- [ ] Último andamento dissolve a peça no silêncio
+- [ ] Estrutura justificada pelo motivo; peça única = ~240 s reais; plano mostrado antes de gastar créditos
+
+**MODO C (série):**
+- [ ] Tabela nome→estrutura→lente apresentada antes de gastar créditos
+- [ ] Cada track com o **nome da versão**; alternância de estruturas quando pedida
+- [ ] **Registo** atualizado versão a versão (prompts, chars, takes, posições) para a memória descritiva
+- [ ] Alternates escondidas depois de cada versão (layout estável)
+
+**MODO B (prompt único):**
+- [ ] Sem clímax/crescendo (salvo contraste autorizado em rework)
+- [ ] Melodia de piano preservada e humana
+- [ ] Negative inclui `vocals, drums, percussion, climax`
+- [ ] Se havia `.json`: factos ancorados; sliders definidos
+- [ ] Se stems: ≤200 chars, mesma tónica/BPM, sem drums</code></div>
+  </details>
+  <p class="mut">Miudezas que evitam perguntas repetidas (duração «dê o que der», idiomas, referências de som) e as ligações aos outros skills — o conhecimento é uma rede, não um ficheiro.</p>
+  <details><summary>ver o texto original</summary>
+    <div class="p"><code>## Notas de processo
+
+- **Duração**: &quot;dê o que der&quot; — só fixa se pedida. Tempo extra = mais espaço e caudas, nunca temas novos.
+- **Idioma**: diálogo em PT-PT; prompts Suno em inglês.
+- **Referências de som**: Sakamoto *async*/*12*, Alva Noto×Sakamoto *Vrioon*/*Insen*, Sebastian Plano *Save Me Not*/*Verve*, Nils Frahm *Felt*, Max Richter *Sleep*, Arvo Pärt.
+- Liga-se a [[between-form-and-silence]], [[deep-drift-mix]], [[marazion-noto-texturas]] e [[suno-studio-extend-workflow]] (memória com a mecânica do Studio).</code></div>
+  </details>
+  <div class="note">O skill irmão <strong>sonografia-camadas</strong> segue a mesma anatomia (identidade → regra absoluta → fases → tabela de decisões → erros e recuperação → checklist) aplicada à composição instrumento a instrumento — o seu conteúdo está resumido na secção «Camadas» acima. Ambos vivem em repositórios git e cada sessão de trabalho lhes devolve o que aprendeu.</div>
+</section>
+
 <section class="wrap">
   <h2>O método dos reworks (Séries I–II)</h2>
   <p>As versões foram criadas pelo skill <strong>sonografia-curadoria</strong> (MODO A — Rework em andamentos), que fixa o método e deixa variar apenas o motivo e a estrutura:</p>
