@@ -57,7 +57,7 @@
 <header class="wrap">
   <div class="k">Entre a Forma e o Silêncio</div>
   <h1>Camões — Versões</h1>
-  <p class="sub">Duas séries de reworks — sobre <em>SLEEP: Tranquility Base</em> (Max Richter) e sobre <em>async</em> (Ryuichi Sakamoto) — cada versão a contar a viagem d'<em>Os Lusíadas</em>: a partida, o Adamastor, a Índia, a Ilha dos Amores.</p>
+  <p class="sub">Duas séries de reworks — sobre <em>SLEEP: Tranquility Base</em> (Max Richter) e sobre <em>async</em> (Ryuichi Sakamoto) — a contar a viagem d'<em>Os Lusíadas</em>; e uma peça construída <strong>instrumento a instrumento</strong> sobre o <em>ASYNC</em>: a <em>Assíncrona</em>.</p>
 </header>
 
 <section class="wrap">
@@ -299,11 +299,39 @@
 
 </section>
 
+
+<section class="wrap" id="camadas">
+  <h2>Camadas — <em style="text-transform:none;letter-spacing:normal">Assíncrona</em> (instrumento a instrumento)</h2>
+  <p>Uma terceira forma de compor: em vez de gerar a peça inteira (Série I) ou por andamentos (Séries I–II), a <em>Assíncrona</em> foi construída <strong>instrumento a instrumento</strong>, cada um na sua track, todos gerados em contexto sobre o <em>ASYNC</em> — o método do skill novo <strong>sonografia-camadas</strong>, criado por investigação verificada (teoria de orquestração, mistura por camadas, parâmetros do Suno Studio) e testado pela primeira vez nesta peça.</p>
+  <p class="mut"><strong>Motivo:</strong> duas respirações que se procuram, acertam o passo por um momento, e voltam a separar-se em paz. A flauta e o cello são as duas respirações; o sub só existe no encontro.</p>
+
+  <div class="story">
+    <div class="st"><b>S1 — Procura</b>0:00–0:50 · ambiência, harmonia, flauta (3 camadas)</div>
+    <div class="st"><b>S2 — Resposta</b>0:50–1:55 · entra o cello (destaque) e a poeira (5)</div>
+    <div class="st"><b>S3 — Encontro</b>1:55–3:10 · entra o sub — clímax (6 camadas)</div>
+    <div class="st"><b>S4 — Separação</b>3:10–4:20 · saem por ordem inversa até restar a ambiência</div>
+  </div>
+
+  <div class="v" style="--vc:var(--c3)">
+    <div class="head"><div class="num">CAMADAS · 01 · 6 INSTRUMENTOS · 13 SEGMENTOS · 4:20</div><h3>Assíncrona</h3>
+    <div class="meta">método: <em>sonografia-camadas — composição vertical sobre o ASYNC</em></div></div>
+    <div class="desc">Harmonia (strings) → sub → flauta → cello → poeira granular → room tone, gerados por esta ordem com tipos dedicados de instrumento do Studio, cada camada a ouvir a referência e as anteriores. Mistura calculada: amplitudes derivadas do RMS medido de cada stem, aplicadas clip a clip.</div>
+    <audio controls preload="none" src="audio/c01-assincrona.mp3"></audio>
+    <details><summary>Como foi feita (o método)</summary>
+      <div class="p"><b>1 · Funções, não instrumentos</b><code>O motivo traduz-se em papéis — harmonia (cola), baixo (peso), melodia e contramelodia (as duas respirações), textura (ar), ambiência (continuidade) — cada um com a sua janela espectral (anti-masking por desenho: sub 30–150 Hz, harmonia 150–600, cello 200–1k, flauta 400–2.5k, poeira 2–12k).</code></div>
+      <div class="p"><b>2 · Mapa de densidade</b><code>As 4 secções foram desenhadas sobre o perfil RMS real do ASYNC (medido em janelas de 10 s). Nenhuma camada toca do início ao fim exceto a ambiência; entradas desfasadas >=8 s; o clímax é o único momento com as 6; a dissolução sai por ordem inversa de entrada (LIFO).</code></div>
+      <div class="p"><b>3 · Geração em contexto</b><code>Cada segmento foi gerado com o tipo dedicado do Studio (Strings, Bass, Woodwinds, FX — sem letra, sem risco de voz), numa região exata da timeline, a ouvir a referência e as camadas já aprovadas. 13 segmentos planeados, 17 Creates gastos (4 regenerações).</code></div>
+      <div class="p"><b>4 · Takes escolhidas por medição, não por fé</b><code>A automação não ouve — cada take foi descarregada do CDN e medida: cobre a região? o RMS é compatível com o papel? a cauda dissolve (>=6 dB abaixo do RMS global nos últimos 10 s)? a energia está na janela certa? 7 takes foram rejeitadas por estes proxies; os empates resolvem-se pela mais contida (a gramática prefere silêncio).</code></div>
+      <div class="p"><b>5 · Mistura calculada</b><code>Offsets por papel (flauta 0 dB · cello -2 · sub -3 · harmonia -4 · poeira -8 · room tone -12) aplicados sobre o RMS medido de cada stem: ganho = (RMS_destaque + offset) - RMS_camada. 13 amplitudes escritas clip a clip e verificadas apos reload. No render final: low-cut anti-lama (ambiencia 350 Hz, poeira 1.5 kHz), teto -1 dBTP.</code></div>
+    </details>
+  </div>
+</section>
+
 <section class="wrap">
   <h2>Ficha técnica</h2>
   <ul>
     <li class="mut"><strong>Geração:</strong> Suno Studio (v4.5-all), julho de 2026 — cada Create devolve 2 takes; foi promovida a melhor de cada par. Série II gerada com o skill já codificado (MODO C), incluindo a montagem dos MP3 pelo <code style="display:inline;font-size:.85em">assemble.py</code>.</li>
-    <li class="mut"><strong>Método:</strong> skill <em>sonografia-curadoria</em> (MODO A — Rework em andamentos), executado por Claude via automação do browser: track por baixo da referência, regiões encostadas (verificadas por estado), prompts curtos em linguagem musical.</li>
+    <li class="mut"><strong>Método:</strong> skills <em>sonografia-curadoria</em> (reworks em andamentos, Séries I–II) e <em>sonografia-camadas</em> (composição instrumento a instrumento, <em>Assíncrona</em>), executados por Claude via automação do browser com verificação por estado e medição de áudio por shell.</li>
     <li class="mut"><strong>Curadoria:</strong> Eduardo Couto · gramática do projeto <em>Entre a Forma e o Silêncio</em> (Paulo Caius).</li>
     <li class="mut"><strong>Referências estudadas:</strong> Max Richter (<em>The Blue Notebooks</em>, <em>Sleep</em>, <em>On the Nature of Daylight</em>), Sebastian Plano (<em>Verve</em>, <em>Save Me Not</em>), Alva Noto (<em>Vrioon</em>/<em>Insen</em> com Ryuichi Sakamoto, <em>Xerrox</em>).</li>
   </ul>
