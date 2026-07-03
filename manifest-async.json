@@ -1,0 +1,27 @@
+[
+  {"slug":"a01-mare-alta","name":"Maré Alta","clips":[
+    {"asset":"eee85152-39c9-4122-9967-dbfe613d3cb8","off":0.172,"dur":68.188},
+    {"asset":"86f3e0be-cd9d-4e92-b3a4-4175a552f12f","off":0.387,"dur":64.810},
+    {"asset":"cafeab53-99f5-40d7-ba36-5154420e3bbe","off":1.198,"dur":65.134},
+    {"asset":"1192dab6-cce3-4639-ad0b-47973683e275","off":0.344,"dur":61.893}]},
+  {"slug":"a02-casco-e-cordame","name":"Casco e Cordame","clips":[
+    {"asset":"2e68a3ee-8e36-4f58-9f0e-03337eff661e","off":0.0,"dur":68.111},
+    {"asset":"d36b7344-5e23-4318-8080-d3dcb46f9f27","off":0.327,"dur":64.810},
+    {"asset":"10ba7477-791a-4102-9444-45f6edb4906c","off":1.198,"dur":65.134},
+    {"asset":"deca4644-8ad7-43c6-b975-53a00e3d7f80","off":0.330,"dur":61.893}]},
+  {"slug":"a03-quinteto-do-cabo","name":"Quinteto do Cabo","clips":[
+    {"asset":"72db120f-22ea-4c75-a3a9-8ce5719e903f","off":0.262,"dur":68.098},
+    {"asset":"86209d09-6e8a-4ad2-a87f-5d553da13dee","off":0.348,"dur":64.810},
+    {"asset":"ca8a647b-b554-4b4d-a634-762fe4e2e0d0","off":1.151,"dur":65.134},
+    {"asset":"f1c9ce51-5363-4dc4-b783-912c616b3a2e","off":0.331,"dur":61.893}]},
+  {"slug":"a04-ferro-e-poeira","name":"Ferro e Poeira","clips":[
+    {"asset":"09a63866-8cf7-4a5c-af67-6201d97c1816","off":0.300,"dur":68.060},
+    {"asset":"7d5f9e67-c0b0-4cdd-9112-5b38dbc73227","off":0.347,"dur":64.810},
+    {"asset":"ea4c042e-9078-4aac-a2de-dce96860baae","off":1.264,"dur":65.134},
+    {"asset":"3e13147f-eeff-4c1a-9105-55b42a545d8d","off":0.331,"dur":61.893}]},
+  {"slug":"a05-gelo-do-sul","name":"Gelo do Sul","clips":[
+    {"asset":"a66b0377-c136-4aed-9ace-fc65063ba183","off":0.057,"dur":68.023},
+    {"asset":"68a25a78-63e2-45e8-836a-e19139fb2731","off":0.353,"dur":64.810},
+    {"asset":"f959d4a0-34bb-43f9-9920-60d24630a306","off":1.174,"dur":65.134},
+    {"asset":"b472d517-5006-4f9b-bf68-fe4ef987c782","off":0.319,"dur":61.893}]}
+]
