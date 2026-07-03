@@ -72,8 +72,32 @@
   </div>
 </section>
 
+
+<section class="wrap" id="oskill">
+  <h2>O que é um <em style="text-transform:none;letter-spacing:normal">skill</em>?</h2>
+  <p>Um <strong>skill</strong> é um documento de instruções que ensina uma inteligência artificial a fazer bem uma tarefa específica — uma espécie de <em>manual de ofício</em> que a IA lê antes de trabalhar. Em vez de se explicar tudo de novo a cada pedido, o conhecimento fica escrito uma vez: as regras do estilo, o método passo a passo, os erros a evitar, as verificações obrigatórias. O skill transforma uma ferramenta genérica num <strong>artesão especializado</strong>.</p>
+  <p class="mut">Os skills deste projeto foram construídos com disciplina de engenharia: cada regra nasceu de uma falha observada (testa-se primeiro o que a IA faz <em>sem</em> a regra), foi corrigida, e re-testada até o comportamento ficar correto. E crescem com o uso — cada peça composta ensina algo que volta para dentro do skill.</p>
+
+  <p><strong>Este projeto usa três skills que trabalham em cadeia:</strong></p>
+  <div class="grammar">
+    <div class="gcell"><b>1 · suno-segment-importer</b><span>COLOCA áudio no Studio: corta a peça de referência em segmentos exatos e injeta-os sem falhas nem alterações de tempo, preservando a dinâmica original.</span></div>
+    <div class="gcell"><b>2 · sonografia-curadoria</b><span>GERA reworks: traduz um motivo em linguagem musical (nunca em nomes), desenha andamentos ou arcos únicos, e opera o Studio — regiões, gerações, escolha de takes.</span></div>
+    <div class="gcell"><b>3 · sonografia-camadas</b><span>COMPÕE instrumento a instrumento: papéis musicais, mapa de densidade por secção, volumes calculados sobre medições, checkpoints de escuta humana.</span></div>
+  </div>
+
+  <p><strong>Como funciona, na prática</strong> — as regras que atravessam tudo:</p>
+  <ul>
+    <li><strong>A gramática é lei</strong> — Sakamoto = alma (melodia frágil), Sebastian Plano = corpo (espaço e respiração), Alva Noto = ar (microtextura dissolvida), silêncio = unificador. <em>Sem voz, nunca; sem pulso, nunca.</em></li>
+    <li><strong>Traduzir, não nomear</strong> — o gerador não sabe quem é o Adamastor; sabe o que é um drone grave a ranger. Todos os prompts são gestos musicais puros.</li>
+    <li><strong>Vocabulário verificado</strong> — uma investigação com verificação adversarial (103 agentes, fontes primárias) fixou os gestos reais de Richter (cordas espressivo com vibrato, tríades invertidas, field recordings) e de Alva Noto (constellations de impulsos, grãos, decays de piano dissolvidos em sines) — e os erros de imitação a evitar.</li>
+    <li><strong>A máquina não ouve — mede</strong> — cada take gerada é descarregada e medida (a cauda dissolve? o pico clippa? a energia está na janela espectral certa?); os empates resolvem-se pela mais contida. O ouvido final é sempre humano.</li>
+    <li><strong>Tudo se verifica por estado</strong> — posições, encostos, volumes e mutes são confirmados por leitura do editor, nunca «a olho»; cada geração termina em dissolução para nunca haver emendas duras.</li>
+  </ul>
+  <div class="note">O ciclo completo desta página: injetar a referência → compor por camadas (<em>Assíncrona</em>) → rework por cima (<em>Camões</em>) → vinte variações para escolha. Cada passo alimentou o seguinte — e o que se aprendeu voltou para os skills.</div>
+</section>
+
 <section class="wrap">
-  <h2>O skill &amp; o método</h2>
+  <h2>O método dos reworks (Séries I–II)</h2>
   <p>As versões foram criadas pelo skill <strong>sonografia-curadoria</strong> (MODO A — Rework em andamentos), que fixa o método e deixa variar apenas o motivo e a estrutura:</p>
   <ul>
     <li><strong>Track nova por baixo da referência</strong> — nunca à frente nem atrás; a geração é «em contexto».</li>
